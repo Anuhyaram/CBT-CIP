@@ -1,27 +1,26 @@
 import random
 
 def get_computer_choice():
-    choices = ["rock", "paper", "scissors"]
+    choices = ["software engineer", "singer"]
     return random.choice(choices)
 
 def get_user_choice():
-    choice = input("Enter your choice (rock, paper, or scissors): ").lower()
-    while choice not in ["rock", "paper", "scissors"]:
-        choice = input("Invalid choice. Enter rock, paper, or scissors: ").lower()
+    choice = input("Enter your choice (software engineer or singer): ").lower()
+    while choice not in ["software engineer", "singer"]:
+        choice = input("Invalid choice. Enter software engineer or singer: ").lower()
     return choice
 
 def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
         return "It's a tie!"
-    elif (user_choice == "rock" and computer_choice == "scissors") or \
-         (user_choice == "paper" and computer_choice == "rock") or \
-         (user_choice == "scissors" and computer_choice == "paper"):
+    elif (user_choice == "software engineer" and computer_choice == "singer") or \
+         (user_choice == "singer" and computer_choice == "software engineer"):
         return "You win!"
     else:
         return "You lose!"
 
 def play_game():
-    print("Welcome to Rock-Paper-Scissors!")
+    print("Welcome to Software Engineer vs. Singer!")
     while True:
         user_choice = get_user_choice()
         computer_choice = get_computer_choice()
